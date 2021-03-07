@@ -58,13 +58,11 @@ func startServer() error {
 
 
 func runMQTTTasks(client mqtt.Client,s service.Service,l log.Logger) error {
-
 	c,err := endpoints.MakeDeviceRecordConsumer(client)
 	if err != nil {
 		return err
 	}
-
-	go transport.MakeDeviceRecordTask(c,s)()
+	go transport.MakeDeviceRecordTask(l,c,s)()
 
 	return nil
 }

@@ -5,7 +5,7 @@ import (
 )
 
 func MakeEndpoints(s service.Service) Endpoints {
-	return Endpoints {
-		
-	}
+	return Endpoints {}
 }
+
+
